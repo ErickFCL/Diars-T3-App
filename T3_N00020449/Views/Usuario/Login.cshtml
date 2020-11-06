@@ -1,0 +1,21 @@
+﻿
+
+<div class="row">
+    <div class="col-6">
+        <form action="/usuario/login" method="post">
+
+            <span>@Html.ValidationMessage("Login")</span>
+            <div class="form-group">
+                <input type="text" name="Username" placeholder="Usuario" />
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="Password" placeholder="Contraseña" />
+            </div>
+                    <button class="btn btn-primary">Login</button>
+</form>
+    </div>
+    <div class="col-12 forgot">
+        <a href="/usuario/registrar"><i class=""></i> Registrarse </a>
+    </div>
+</div>

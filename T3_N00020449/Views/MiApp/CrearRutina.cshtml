@@ -1,0 +1,38 @@
+﻿@{ var rutina = (Rutina)Model; }
+
+<body>
+    <header>
+        <div class="container">
+            <h1><img src="https://simpleicon.com/wp-content/uploads/user1.png" alt="Alternate Text" width="80" /> @User.Claims.FirstOrDefault().Value</h1>
+
+            <hr />
+            <br />
+        </div>
+    </header>
+</body>
+
+<h1>Creando Rutina. . .</h1>
+<div class="row">
+    <div class="col-6">
+        <form action="/miapp/CrearRutina" method="post">
+
+            <div class="form-group">
+                <label>Nombre Rutina</label>
+                <input class="form-control" placeholder="Nombre Rutina" name="Nombre" />
+            </div>
+
+            <div class="form-group">
+                <label>Tipo</label>
+                <select name="Tipo" class="form-control">
+                    <option value="">-- Selecciona una opcion --</option>
+                    @foreach (var item in ViewBag.Tipo)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
+
+            <button class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

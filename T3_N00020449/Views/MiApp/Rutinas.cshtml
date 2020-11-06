@@ -1,0 +1,42 @@
+﻿@{    List<Rutina> rutinaUsuario = ((List<Rutina>)Model);
+}
+
+<body>
+    <header>
+        <div class="container">
+            <h1><img src="https://simpleicon.com/wp-content/uploads/user1.png" alt="Alternate Text" width="80" /> @User.Claims.FirstOrDefault().Value</h1>
+
+            <hr />
+            <br />
+        </div>
+    </header>
+</body>
+
+<label class="display-4">Lista de Rutinas</label>
+<h5>
+    <button class="btn btn-success"><a href="/miapp/CrearRutina">Crear Rutina</a></button>
+</h5>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="bg-dark" style="color: #fff;">
+            <th>Nombre Rutina</th>
+            <th>Tipo Rutina</th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in rutinaUsuario)
+        {
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Tipo</td>
+            <td>
+                <button class="btn btn-outline-success"><a href="/miapp/Index?idRutina=@item.Id">Ver Rutina</a></button>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
